@@ -43,7 +43,7 @@ def main(model):
     model_name = model
     install_llm_model(model_name)
     
-    first_author_firstname, first_author_lastname, last_author_firstname, last_author_lastname = parse_csv("enriched_aggregated_papers.csv")
+    first_author_firstname, first_author_lastname, last_author_firstname, last_author_lastname = parse_csv("data/enriched_aggregated_papers.csv")
     
     if first_author_firstname and first_author_lastname:
         first_author_gender = infer_gender(client, model_name, first_author_firstname, first_author_lastname)
