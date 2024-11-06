@@ -6,6 +6,7 @@ import subprocess
 from tqdm import tqdm
 import pandas as pd
 from openai import OpenAI
+import ollama
 
 
 def parse_csv(file):
@@ -37,7 +38,7 @@ def install_llm_model(model_name):
         print(f"An error occurred while installing the model: {e}")
 
 
-def infer_gender(client, model_name, author):
+def infer_gender(client, model_name, author, api='ollama'):
     prompt_text = (
         f'Given the names of the author, please identify the likely gender of the author. '
         f'Provide the gender as either "male", "female", "other", or "not retrievable". '
@@ -53,14 +54,24 @@ def infer_gender(client, model_name, author):
         '}'
     )
 
-    response = client.chat.completions.create(
-        model=model_name,
-        messages=[
-            {"role": "user", "content": prompt_text}
-        ]
-    )
+    message = [
+                {"role": "user", "content": prompt_text}
+            ]
 
-    return response.choices[0].message.content.strip()
+    if api == 'openai':
+        response = client.chat.completions.create(
+            model=model_name,
+            messages= message)
+
+        return response.choices[0].message.content.strip()
+    elif api == 'ollama':
+        response = ollama.chat(model=model_name, 
+                              messages=message)
+        return response['message']['content'].strip()
+
+    else:
+        raise Exception('Miss an api')
+
 
 
 def save_to_tsv(result, output_file='gender_data_dict.tsv'):
@@ -73,7 +84,7 @@ def save_to_tsv(result, output_file='gender_data_dict.tsv'):
             author_name = result.get("author", {}).get("name", "")
         #FIXME: Change the exception for the right one
         except Exception: 
-            author_name = NOne
+            author_name = None
         try:
             gender_author = result.get("author", {}).get("gender", "")
         #FIXME: Change the exception for the right one
@@ -136,12 +147,12 @@ def main(model, install_llm_model_flag=False):
                 json_text = json_match.group(0)
                 try:
                     result = json.loads(json_text)
+                    save_to_tsv(result)
                 except json.JSONDecodeError as e:
                     print("Failed to parse JSON:", e)
             else:
                 print("No JSON found in the response content.")
 
-            save_to_tsv(result)
 
 
 if __name__ == "__main__":
