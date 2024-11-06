@@ -37,61 +37,43 @@ def install_llm_model(model_name):
         print(f"An error occurred while installing the model: {e}")
 
 
-def infer_gender(client, model_name, firstauthor, lastauthor):
+def infer_gender(client, model_name, author):
     prompt_text = (
-        f"Given the names of two authors, please identify the likely gender of each author. "
+        f'Given the names of the author, please identify the likely gender of the author. '
         f'Provide the gender as either "male", "female", "other", or "not retrievable". '
-        f"Also, include a brief reasoning for each author based on the names provided. "
-        f"The name of the first author is: {firstauthor} and the name of the last author is: {lastauthor}. "
-        f"Please return the response in **strict JSON format only**, with no additional text. "
-        f"Use the following structure:\n"
-        "{\n"
-        '    "first_author": {\n'
-        '        "name": {firstauthor}, \n'
+        f'Also, include a reasoning for each author based on the name provided. '
+        f'The name of the author is: {author}. '
+        f'Please return the response in **strict JSON format only**, with no additional text. '
+        f'Use the following structure:\n'
+        '{\n'
+        '    "author": {\n'
+        '        "name": {author}, \n'
         '        "gender": "male/female/other/not retrievable",\n'
-        '        "reasoning": "Explanation for the gender determination of the first author."\n'
-        "    },\n"
-        '    "last_author": {\n'
-        '        "name": {lastauthor}, \n'
-        '        "gender": "male/female/other/not retrievable",\n'
-        '        "reasoning": "Explanation for the gender determination of the last author."\n'
-        "    }\n"
-        "}"
+        '        "reasoning": "Explanation for the gender determination of the author."\n'
+        '}'
     )
 
     response = client.chat.completions.create(
-        model=model_name, messages=[{"role": "user", "content": prompt_text}]
+        model=model_name,
+        messages=[
+            {"role": "user", "content": prompt_text}
+        ]
     )
 
     return response.choices[0].message.content.strip()
 
 
-def save_to_tsv(result, output_file="gender_data.tsv"):
-    with open(output_file, mode="a", newline="") as file:
-        writer = csv.writer(file, delimiter="\t")
-
+def save_to_tsv(result, output_file='gender_data_dict.tsv'):
+    with open(output_file, mode='a', newline='') as file:
+        writer = csv.writer(file, delimiter='\t')
+        
         if file.tell() == 0:
-            writer.writerow(
-                [
-                    "first_author",
-                    "gender_firstauthor",
-                    "reasoning_firstauthor",
-                    "last_author",
-                    "gender_lastauthor",
-                    "reasoning_lastauthor",
-                ]
-            )
+            writer.writerow(['author', 'gender_author', 'reasoning_author'])
 
-        writer.writerow(
-            [
-                result["first_author"]["name"],
-                result["first_author"]["gender"],
-                result["first_author"]["reasoning"],
-                result["last_author"]["name"],
-                result["last_author"]["gender"],
-                result["last_author"]["reasoning"],
-            ]
-        )
+        writer.writerow([result["author"]["name"], 
+                         result["author"]["gender"], 
+                         result["author"]["reasoning"]])
+
 
 
 def main(model, install_llm_model_flag=False):
@@ -109,6 +91,7 @@ def main(model, install_llm_model_flag=False):
         sum(1 for _ in open(csv_data_filename)) - 1
     )  # Subtract 1 to exclude the header row
 
+    set_authors = set()
     for (
         first_author_firstname,
         first_author_lastname,
@@ -126,14 +109,13 @@ def main(model, install_llm_model_flag=False):
         firstauthor = f"{first_author_firstname} {first_author_lastname}"
         lastauthor = f"{last_author_firstname} {last_author_lastname}"
 
-        if firstauthor and lastauthor:
-            json_gender_response = infer_gender(
-                client, model_name, firstauthor, lastauthor
-            )
+        for author in (firstauthor, lastauthor):
 
+            if author in set_authors:
+                continue
+            set_authors.add(author)
             json_gender_response = infer_gender(
-                client, model_name, firstauthor, lastauthor
-            )
+                client, model_name, author)
             json_match = re.search(r"{.*}", json_gender_response, re.DOTALL)
             if json_match:
                 json_text = json_match.group(0)
