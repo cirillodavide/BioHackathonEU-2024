@@ -69,11 +69,11 @@ def save_to_tsv(result, output_file='gender_data_dict.tsv'):
         
         if file.tell() == 0:
             writer.writerow(['author', 'gender_author', 'reasoning_author'])
+        author_name = result.get("author", {}).get("name", "")
+        gender_author = result.get("author", {}).get("gender", "")
+        reasoning_author = result.get("author", {}).get("reasoning", "")
 
-        writer.writerow([result["author"]["name"], 
-                         result["author"]["gender"], 
-                         result["author"]["reasoning"]])
-
+        writer.writerow([author_name, gender_author, reasoning_author])
 
 
 def main(model, install_llm_model_flag=False):
