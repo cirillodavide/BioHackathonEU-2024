@@ -31,4 +31,16 @@ For example, if you select the "llama2" model, please execute the following:
 
 ```bash
 python3 code/retrieve_gender.py -m llama2
+
+
+## Topics 
+
+Fetch topics from Openalex:
+```
+python3 enrich_with_topics.py enriched_aggregated_papers.csv
+```
+
+Create tag cloud with the retrived topics:
+```
+python3 create_tag_clouds.py
 ```
