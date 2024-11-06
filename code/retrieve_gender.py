@@ -69,10 +69,21 @@ def save_to_tsv(result, output_file='gender_data_dict.tsv'):
         
         if file.tell() == 0:
             writer.writerow(['author', 'gender_author', 'reasoning_author'])
-        author_name = result.get("author", {}).get("name", "")
-        gender_author = result.get("author", {}).get("gender", "")
-        reasoning_author = result.get("author", {}).get("reasoning", "")
-
+        try:
+            author_name = result.get("author", {}).get("name", "")
+        #FIXME: Change the exception for the right one
+        except Exception: 
+            author_name = NOne
+        try:
+            gender_author = result.get("author", {}).get("gender", "")
+        #FIXME: Change the exception for the right one
+        except Exception: 
+            gender_author = None
+        try:
+            reasoning_author = result.get("author", {}).get("reasoning", "")
+        #FIXME: Change the exception for the right one
+        except Exception: 
+            reasoning_author = None
         writer.writerow([author_name, gender_author, reasoning_author])
 
 
@@ -108,8 +119,12 @@ def main(model, install_llm_model_flag=False):
 
         firstauthor = f"{first_author_firstname} {first_author_lastname}"
         lastauthor = f"{last_author_firstname} {last_author_lastname}"
+        if firstauthor == lastauthor:
+            to_parse = (firstauthor)
+        else:
+            to_parse = (firstauthor, lastauthor)
 
-        for author in (firstauthor, lastauthor):
+        for author in to_parse:
 
             if author in set_authors:
                 continue
