@@ -10,6 +10,7 @@ from .json_parser import JsonParser
 from collections import OrderedDict
 from .demografix import GenderPredictor
 import time
+# import pandas as pd
 
 def run ( json_path: str, outfile: str, verbose: bool) -> None:
 
@@ -51,7 +52,9 @@ def run ( json_path: str, outfile: str, verbose: bool) -> None:
             # NOTE: CHANGE
             # fist_author: infering gender name
             # fauthor_gender = GenderPredictor.get_gender(authors.get('first_author'), fauthor_nation, fselected_category)
-            if JsonParser.is_authorname_in_csv( outfile, fauthor_fname ):
+            if fauthor_fname == "NaN":
+                fauthor_gender_gender, fauthor_gender_prob, fauthor_gender_stat = "", "", ""
+            elif JsonParser.is_authorname_in_csv( outfile, fauthor_fname ):
                 if verbose:
                     print(f"Repeated name: {fauthor_fname} - copying metrics already calculated.")
                 fauthor_gender_gender, fauthor_gender_prob, fauthor_gender_stat = JsonParser.is_authorname_in_csv( outfile, fauthor_fname )
@@ -74,7 +77,9 @@ def run ( json_path: str, outfile: str, verbose: bool) -> None:
             # NOTE: CHANGE
             # last_author: infering gender name
             # lauthor_gender = GenderPredictor.get_gender(authors.get('last_author'), lauthor_nation, lselected_category)
-            if JsonParser.is_authorname_in_csv( outfile, lauthor_fname ):
+            if lauthor_fname == "NaN":
+                lauthor_gender_gender, lauthor_gender_prob, lauthor_gender_stat = "", "", ""            
+            elif JsonParser.is_authorname_in_csv( outfile, lauthor_fname ):
                 if verbose:
                     print(f"Repeated name: {lauthor_fname} - copying metrics already calculated.")
                 lauthor_gender_gender, lauthor_gender_prob, lauthor_gender_stat = JsonParser.is_authorname_in_csv( outfile, lauthor_fname )

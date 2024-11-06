@@ -1,0 +1,446 @@
+[
+    {
+        "pmcid": "3Rs toxicity testing and disease modeling projects in the European Horizon 2020 research and innovation program.",
+        "authors": "[\"Mathieu Vinken\", \"Mathieu\", \"Vinken\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "A benchmark of optimization solvers for genome-scale metabolic modeling of organisms and communities.",
+        "authors": "[\"Daniel Machado\", \"Daniel\", \"Machado\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "A recent origin of Orf3a from M protein across the coronavirus lineage arising by sharp divergence.",
+        "authors": "[\"Christos A Ouzounis\", \"Christos A\", \"Ouzounis\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "A survey into the contribution of regional/national pathogen data platforms and on the resources needed to develop and maintain them",
+        "authors": "[\"Aitana Neves\", \"Aitana\", \"Neves\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "A versatile and interoperable computational framework for the analysis and modeling of COVID-19 disease mechanisms",
+        "authors": "[\"Anna Niarakis\", \"Anna\", \"Niarakis\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "An Expanded Genome-Wide Association Study of Type 2 Diabetes in Europeans.",
+        "authors": "[\"Robert A Scott\", \"Robert A\", \"Scott\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "An annotated nomenclatural checklist of endemic vascular plants distributed in the Ukrainian Carpathians.",
+        "authors": "[\"Andriy Novikov\", \"Andriy\", \"Novikov\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "An overview of bioinformatics courses delivered at the academic level in Italy: Reflections and recommendations from BITS.",
+        "authors": "[\"Roberto Marangoni\", \"Roberto\", \"Marangoni\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Analysing and identifying miRNAs from RNA-seq data using miRDeep2 tool in Galaxy, a practical guide",
+        "authors": "[\"Rifqi Rafsanjani\", \"Rifqi\", \"Rafsanjani\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Applying the FAIR principles to data in a hospital: challenges and opportunities in a pandemic",
+        "authors": "[\"N\\u00faria Queralt-Rosinach\", \"N\\u00faria\", \"Queralt-Rosinach\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Applying the FAIR principles to data in a hospital: challenges and opportunities in a pandemic.",
+        "authors": "[\"N\\u00faria Queralt-Rosinach\", \"N\\u00faria\", \"Queralt-Rosinach\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Assessment of the genetic and clinical determinants of fracture risk: genome wide association and mendelian randomisation study.",
+        "authors": "[\"Katerina Trajanoska\", \"Katerina\", \"Trajanoska\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Association Between Lysine Reduction Therapies and Cognitive Outcomes in Patients With Pyridoxine-Dependent Epilepsy.",
+        "authors": "[\"Curtis R Coughlin\", \"Curtis R\", \"Coughlin\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "BBMRI-ERIC's contributions to research and knowledge exchange on COVID-19.",
+        "authors": "[\"Petr Holub\", \"Petr\", \"Holub\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Bioconda: sustainable and comprehensive software distribution for the life sciences.",
+        "authors": "[\"Bj\\u00f6rn Gr\\u00fcning\", \"Bj\\u00f6rn\", \"Gr\\u00fcning\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Bioinformatics solutions for big data analysis in life sciences presented by the German network for bioinformatics infrastructure.",
+        "authors": "[\"A P\\u00fchler\", \"A\", \"P\\u00fchler\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Biomarkers of disease progression in people with psoriasis: a scoping review.",
+        "authors": "[\"Ravi Ramessur\", \"Ravi\", \"Ramessur\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Biomarkers of systemic treatment response in people with psoriasis: a scoping review.",
+        "authors": "[\"Mark Corbett\", \"Mark\", \"Corbett\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "BrAPI-an application programming interface for plant breeding applications.",
+        "authors": "[\"Peter Selby\", \"Peter\", \"Selby\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Butler enables rapid cloud-based analysis of thousands of human genomes.",
+        "authors": "[\"Sergei Yakneen\", \"Sergei\", \"Yakneen\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "COVID-19 Disease Map, a computational knowledge repository of SARS-CoV-2 virus-host interaction mechanisms",
+        "authors": "[\"Marek Ostaszewski\", \"Marek\", \"Ostaszewski\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "COVID19 Disease Map, a computational knowledge repository of virus-host interaction mechanisms.",
+        "authors": "[\"Marek Ostaszewski\", \"Marek\", \"Ostaszewski\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Challenges in funding and developing genomic software: roots and remedies.",
+        "authors": "[\"Adam Siepel\", \"Adam\", \"Siepel\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Clinical, methodology, and patient/carer expert advice in pediatric drug development by conect4children.",
+        "authors": "[\"Katharine Cheng\", \"Katharine\", \"Cheng\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Cloudy with a Chance of Peptides: Accessibility, Scalability, and Reproducibility with Cloud-Hosted Environments.",
+        "authors": "[\"Benjamin A Neely\", \"Benjamin A\", \"Neely\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Comparative genomics of four lactic acid bacteria identified with Vitek MS (MALDI-TOF) and whole-genome sequencing.",
+        "authors": "[\"\\u00d6zge Kahraman-Il\\u0131kkan\", \"\\u00d6zge\", \"Kahraman-Il\\u0131kkan\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Computational Approaches to Enzyme Inhibition by Marine Natural Products in the Search for New Drugs.",
+        "authors": "[\"Federico Gago\", \"Federico\", \"Gago\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Consensus Recommendations for Clinical Outcome Assessments and Registry Development in Ataxias: Ataxia Global Initiative (AGI) Working Group Expert Guidance.",
+        "authors": "[\"Thomas Klockgether\", \"Thomas\", \"Klockgether\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Coping with interoperability in the development of a federated research infrastructure: achievements, challenges and recommendations from the JA-InfAct.",
+        "authors": "[\"Juan Gonz\\u00e1lez-Garc\\u00eda\", \"Juan\", \"Gonz\\u00e1lez-Garc\\u00eda\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Data quality and patient characteristics in European ANCA-associated vasculitis registries: data retrieval by federated querying.",
+        "authors": "[\"Karl Gisslander\", \"Karl\", \"Gisslander\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Deep learning models in genomics; are we there yet?",
+        "authors": "[\"Lefteris Koumakis\", \"Lefteris\", \"Koumakis\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Draft Genome Sequence of a Chitinimonas Species from Hudson Valley Waterways That Expresses Violacein Pigment.",
+        "authors": "[\"Brooke A Jude\", \"Brooke A\", \"Jude\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Drug-target identification in COVID-19 disease mechanisms using computational systems biology approaches.",
+        "authors": "[\"Anna Niarakis\", \"Anna\", \"Niarakis\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Enzyme annotation in UniProtKB using Rhea.",
+        "authors": "[\"Anne Morgat\", \"Anne\", \"Morgat\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "European Health Information Portal: a one-stop shop for health information.",
+        "authors": "[\"Hanna Tolonen\", \"Hanna\", \"Tolonen\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "FAIR adoption, assessment and challenges at UniProt.",
+        "authors": "[\"Leyla Garcia\", \"Leyla\", \"Garcia\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "FAIR, open, and free does not mean no restrictions.",
+        "authors": "[\"Keith G Jeffery\", \"Keith G\", \"Jeffery\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "FAIRsharing as a community approach to standards, repositories and policies.",
+        "authors": "[\"Susanna-Assunta Sansone\", \"Susanna-Assunta\", \"Sansone\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Federated causal inference based on real-world observational data sources: application to a SARS-CoV-2 vaccine effectiveness assessment.",
+        "authors": "[\"Marjan Meurisse\", \"Marjan\", \"Meurisse\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Fostering global data sharing: highlighting the recommendations of the Research Data Alliance COVID-19 working group.",
+        "authors": "[\"Claire C Austin\", \"Claire C\", \"Austin\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Four-month incidence of suicidal thoughts and behaviors among healthcare workers after the first wave of the Spain COVID-19 pandemic.",
+        "authors": "[\"P Mortier\", \"P\", \"Mortier\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "GOBLET: the Global Organisation for Bioinformatics Learning, Education and Training.",
+        "authors": "[\"Teresa K Attwood\", \"Teresa K\", \"Attwood\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Gene expression signature predicts rate of type 1 diabetes progression.",
+        "authors": "[\"Tomi Suomi\", \"Tomi\", \"Suomi\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Genetic Architecture of Parkinson's Disease in the Indian Population: Harnessing Genetic Diversity to Address Critical Gaps in Parkinson's Disease Research.",
+        "authors": "[\"Roopa Rajan\", \"Roopa\", \"Rajan\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Gitelman-Like Syndrome Caused by Pathogenic Variants in mtDNA.",
+        "authors": "[\"Daan Viering\", \"Daan\", \"Viering\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Health service and psychotropic medication use for mental health conditions among healthcare workers active during the Spain Covid-19 Pandemic - A prospective cohort study using web-based surveys.",
+        "authors": "[\"Philippe Mortier\", \"Philippe\", \"Mortier\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "How to START? Four pillars to optimally begin your orphan drug development.",
+        "authors": "[\"Anneliene Hechtelt Jonker\", \"Anneliene Hechtelt\", \"Jonker\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "INFRAFRONTIER: mouse model resources for modelling human diseases.",
+        "authors": "[\"Asrar Ali Khan\", \"Asrar\", \"Ali Khan\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Impact of structural biologists and the Protein Data Bank on small-molecule drug discovery and development.",
+        "authors": "[\"Stephen K Burley\", \"Stephen K\", \"Burley\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Improved Diagnosis of Rare Disease Patients through Systematic Detection of Runs of Homozygosity.",
+        "authors": "[\"Leslie Matalonga\", \"Leslie\", \"Matalonga\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Improving Drug Therapy for Pediatric Patients: Unfinished History of Pediatric Drug Development.",
+        "authors": "[\"Robert M Ward\", \"Robert M\", \"Ward\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Initial treatment of diabetes in Italy. A nationwide population-based study from of the ARNO Diabetes Observatory.",
+        "authors": "[\"Enzo Bonora\", \"Enzo\", \"Bonora\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Integrated analysis of public datasets for the discovery and validation of survival-associated genes in solid tumors.",
+        "authors": "[\"Bal\\u00e1zs Gy\\u0151rffy\", \"Bal\\u00e1zs\", \"Gy\\u0151rffy\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Integration of data from NIPPON DATA80/90 and National Nutrition Survey in Japan: for cohort studies of representative Japanese on nutrition.",
+        "authors": "[\"Nagako Okuda\", \"Nagako\", \"Okuda\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Lack of Association Between Genetic Variants at ACE2 and TMPRSS2 Genes Involved in SARS-CoV-2 Infection and Human Quantitative Phenotypes.",
+        "authors": "[\"Esteban A Lopera Maya\", \"Esteban A\", \"Lopera Maya\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Large scale meta-analysis of preclinical toxicity data for target characterisation and hypotheses generation.",
+        "authors": "[\"Jordi Munoz-Muriedas\", \"Jordi\", \"Munoz-Muriedas\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Lipidomics Moves to Center Stage of Biomedicine.",
+        "authors": "[\"Valerie B O'Donnell\", \"Valerie\", \"B O'Donnell\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Mental Health Impact of the First Wave of COVID-19 Pandemic on Spanish Healthcare Workers: a Large Cross-sectional Survey",
+        "authors": "[\"Jordi Alonso\", \"Jordi\", \"Alonso\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Mental impact of Covid-19 among Spanish healthcare workers. A large longitudinal survey.",
+        "authors": "[\"J Alonso\", \"J\", \"Alonso\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Methodological challenges and analytic opportunities for modeling and interpreting Big Healthcare Data.",
+        "authors": "[\"Ivo D Dinov\", \"Ivo D\", \"Dinov\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Moving towards a holistic approach for human health risk assessment - Is the current approach fit for purpose?",
+        "authors": "[\"Susanne Hougaard Bennekou\", \"Susanne Hougaard\", \"Bennekou\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Natural History, Phenotypic Spectrum, and Discriminative Features of Multisystemic RFC1 Disease.",
+        "authors": "[\"Andreas Trasch\\u00fctz\", \"Andreas\", \"Trasch\\u00fctz\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Pancreatic cancer and autoimmune diseases: An association sustained by computational and epidemiological case-control approaches.",
+        "authors": "[\"Paulina Gomez-Rubio\", \"Paulina\", \"Gomez-Rubio\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Paying it forward: Crowdsourcing the harmonisation and linking of taxon names and biodiversity identifiers.",
+        "authors": "[\"Brandon Kwee Boon Seah\", \"Brandon Kwee Boon\", \"Seah\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Perspectives on tracking data reuse across biodata resources.",
+        "authors": "[\"Karen E Ross\", \"Karen E\", \"Ross\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Protein glycation products associate with progression of kidney disease and incident cardiovascular events in individuals with type 1 diabetes.",
+        "authors": "[\"Krishna Adeshara\", \"Krishna\", \"Adeshara\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Protocol of a randomized, double-blind, placebo-controlled, parallel-group, multicentre study of the efficacy and safety of nicotinamide in patients with Friedreich ataxia (NICOFA).",
+        "authors": "[\"Kathrin Reetz\", \"Kathrin\", \"Reetz\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Providing metabolomics education and training: pedagogy and considerations.",
+        "authors": "[\"Catherine L Winder\", \"Catherine L\", \"Winder\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Publisher Correction: Butler enables rapid cloud-based analysis of thousands of human genomes.",
+        "authors": "[\"Sergei Yakneen\", \"Sergei\", \"Yakneen\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Quantitative Aspect of Bacillus subtilis σB Regulatory Network-A Computational Simulation.",
+        "authors": "[\"Jiri Vohradsky\", \"Jiri\", \"Vohradsky\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Rare Diseases and Otorhinolaryngology, Head and Neck Surgery.",
+        "authors": "[\"Stefan K Plontke\", \"Stefan K\", \"Plontke\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Recommendations for robust and reproducible preclinical research in personalised medicine.",
+        "authors": "[\"Vibeke Fosse\", \"Vibeke\", \"Fosse\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Recommendations from the IRDiRC Working Group on methodologies to assess the impact of diagnoses and therapies on rare disease patients.",
+        "authors": "[\"Galliano Zanello\", \"Galliano\", \"Zanello\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Research on Rare Diseases in Germany - Using small fish and super-resolution microscopy to track down a rare disease.",
+        "authors": "[\"Nicole Endlich\", \"Nicole\", \"Endlich\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "SCORE-IT (Selecting Core Outcomes for Randomised Effectiveness trials In Type 2 diabetes): a systematic review of registered trials.",
+        "authors": "[\"Nicola L Harman\", \"Nicola L\", \"Harman\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Selecting Core Outcomes for Randomised Effectiveness trials In Type 2 Diabetes (SCORE-IT): study protocol for the development of a core outcome set.",
+        "authors": "[\"Nicola L Harman\", \"Nicola L\", \"Harman\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Selecting Core Outcomes for Randomised Effectiveness trials In Type 2 diabetes (SCORE-IT): a patient and healthcare professional consensus on a core outcome set for type 2 diabetes.",
+        "authors": "[\"Nicola L Harman\", \"Nicola L\", \"Harman\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Shared genetic basis between genetic generalized epilepsy and background electroencephalographic oscillations.",
+        "authors": "[\"Remi Stevelink\", \"Remi\", \"Stevelink\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Solving patients with rare diseases through programmatic reanalysis of genome-phenome data.",
+        "authors": "[\"Leslie Matalonga\", \"Leslie\", \"Matalonga\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Solving unsolved rare neurological diseases-a Solve-RD viewpoint.",
+        "authors": "[\"Rebecca Sch\\u00fcle\", \"Rebecca\", \"Sch\\u00fcle\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Standards of NGS Data Sharing and Analysis in Ataxias: Recommendations by the NGS Working Group of the Ataxia Global Initiative.",
+        "authors": "[\"Danique Beijer\", \"Danique\", \"Beijer\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Survival analysis across the entire transcriptome identifies biomarkers with the highest prognostic power in breast cancer.",
+        "authors": "[\"Bal\\u00e1zs Gy\\u0151rffy\", \"Bal\\u00e1zs\", \"Gy\\u0151rffy\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Targeted serum proteomics of longitudinal samples from newly diagnosed youth with type 1 diabetes distinguishes markers of disease and C-peptide trajectory.",
+        "authors": "[\"Robert Moulder\", \"Robert\", \"Moulder\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Ten years and a million links: building a global taxonomic library connecting persistent identifiers for names, publications and people.",
+        "authors": "[\"Roderic Page\", \"Roderic\", \"Page\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "The Dutch Techcentre for Life Sciences: Enabling data-intensive life science research in the Netherlands.",
+        "authors": "[\"Lars Eijssen\", \"Lars\", \"Eijssen\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "The ELIXIR Core Data Resources: fundamental infrastructure for the life sciences",
+        "authors": "[\"Rachel Drysdale\", \"Rachel\", \"Drysdale\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "The European Society of Human Genetics-Young committee- activities and achievements between 2019-2022.",
+        "authors": "[\"Elena Avram\", \"Elena\", \"Avram\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "The IUPHAR/BPS Guide to PHARMACOLOGY in 2018: updates and expansion to encompass the new guide to IMMUNOPHARMACOLOGY.",
+        "authors": "[\"Simon D Harding\", \"Simon D\", \"Harding\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "The IUPHAR/BPS Guide to PHARMACOLOGY in 2020: extending immunopharmacology content and introducing the IUPHAR/MMV Guide to MALARIA PHARMACOLOGY.",
+        "authors": "[\"Jane F Armstrong\", \"Jane F\", \"Armstrong\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "The IUPHAR/BPS guide to PHARMACOLOGY in 2022: curating pharmacology for COVID-19, malaria and antibacterials.",
+        "authors": "[\"Simon D Harding\", \"Simon D\", \"Harding\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "The Importance of Sharing Data in Systems Biology.",
+        "authors": "[\"Elisha M Wood-Charlson\", \"Elisha M\", \"Wood-Charlson\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "The Medical Genome Initiative: moving whole-genome sequencing for rare disease diagnosis to the clinic.",
+        "authors": "[\"Christian R Marshall\", \"Christian R\", \"Marshall\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "The neurophysiological lesson from the Italian CIDP database.",
+        "authors": "[\"Emanuele Spina\", \"Emanuele\", \"Spina\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Thirty-day suicidal thoughts and behaviors among hospital workers during the first wave of the Spain COVID-19 outbreak.",
+        "authors": "[\"Philippe Mortier\", \"Philippe\", \"Mortier\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Together4RD position statement on collaboration between European reference networks and industry.",
+        "authors": "[\"Victoria Hedley\", \"Victoria\", \"Hedley\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Towards a Sustainable European Research Infrastructures Ecosystem",
+        "authors": "[\"Margarida Ribeiro\", \"Margarida\", \"Ribeiro\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Traumatic stress symptoms among Spanish healthcare workers during the COVID-19 pandemic: a prospective study.",
+        "authors": "[\"Ana Portillo-Van Diest\", \"Ana\", \"Portillo-Van Diest\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Trends in Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2) infection and vaccine antibody prevalence in a multi-ethnic inner-city antenatal population: A cross-sectional surveillance study.",
+        "authors": "[\"Daria Andreeva\", \"Daria\", \"Andreeva\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Trends in the Electron Microscopy Data Bank (EMDB).",
+        "authors": "[\"Ardan Patwardhan\", \"Ardan\", \"Patwardhan\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Two years of explicit CiTO annotations.",
+        "authors": "[\"Egon Willighagen\", \"Egon\", \"Willighagen\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "UniProt and Mass Spectrometry-Based Proteomics-A 2-Way Working Relationship.",
+        "authors": "[\"E H Bowler-Barnett\", \"E H\", \"Bowler-Barnett\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Whole-exome sequencing identifies novel protein-altering variants associated with serum apolipoprotein and lipid concentrations.",
+        "authors": "[\"Niina Sandholm\", \"Niina\", \"Sandholm\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "[\"A\" or ... \"The\" precious manuscript of the \"Long life Elixir\" just discovered].",
+        "authors": "[\"Jean-Pierre Grelaud\", \"Jean-Pierre\", \"Grelaud\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "[Dracula was right: The elixir of youth could be the young blood].",
+        "authors": "[\"V M Asensio-S\\u00e1nchez\", \"V M\", \"Asensio-S\\u00e1nchez\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "eTRANSAFE: Building a sustainable framework to share reproducible drug safety knowledge with the public domain",
+        "authors": "[\"Sirarat Sarntivijai\", \"Sirarat\", \"Sarntivijai\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "eTRANSAFE: Building a sustainable framework to share reproducible drug safety knowledge with the public domain.",
+        "authors": "[\"Sirarat Sarntivijai\", \"Sirarat\", \"Sarntivijai\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "htsget: a protocol for securely streaming genomic data.",
+        "authors": "[\"Jerome Kelleher\", \"Jerome\", \"Kelleher\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Mental health impact of the first wave of COVID-19 pandemic on Spanish healthcare workers: A large cross-sectional survey.",
+        "authors": "[\"Jordi Alonso\", \"Jordi\", \"Alonso\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "The Dutch Techcentre for Life Sciences: Enabling data-intensive life science research in the Netherlands",
+        "authors": "[\"Lars Eijssen\", \"Lars\", \"Eijssen\", \"NaN\", \"NaN\", \"NaN\"]"
+    },
+    {
+        "pmcid": "Capturing variation impact on molecular interactions in the IMEx Consortium mutations data set.",
+        "authors": "[\"NaN\", \"NaN\", \"NaN\", \"P Porras\", \"P\", \"Porras\"]"
+    },
+    {
+        "pmcid": "No more business as usual: agile and effective responses to emerging pathogen threats require open data and open analytics",
+        "authors": "[\"NaN\", \"NaN\", \"NaN\", \"Sergei Kosakovsky Pond\", \"Sergei\", \"Kosakovsky Pond\"]"
+    }
+]
