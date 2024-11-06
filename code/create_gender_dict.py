@@ -73,14 +73,16 @@ def save_to_tsv(result, output_file='gender_data_dict.tsv'):
                          result["author"]["reasoning"]])
 
 
-def main(model):
+def main(model, install_llm_model_flag=False):
+    if install_llm_model_flag:
+        install_llm_model(model)
+
     client = OpenAI(
         base_url='http://localhost:11434/v1',
         api_key='ollama'  # required, but unused
     )
     
     model_name = model
-    install_llm_model(model_name)
     
     unique_author_names = parse_csv("data/enriched_aggregated_papers.csv")
     for author_name in unique_author_names:
@@ -100,6 +102,8 @@ def main(model):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-m", "--model", help="Name of the LLM model")
+    parser.add_argument("--install-model", action="store_true", help="Install the model")
+
     args = parser.parse_args()
 
-    main(args.model)
+    main(args.model, args.install_model)
