@@ -15,6 +15,10 @@ df['topics'] = None
 df['subfields'] = None
 df['fields'] = None
 df['domains'] = None
+df['topic_ids'] = None
+df['subfield_ids'] = None
+df['field_ids'] = None
+df['domain_ids'] = None
 
 # Configuration
 email = "s.chatzopoulos@gmail.com"  # Update to your actual email
@@ -23,43 +27,50 @@ headers = {
     "User-Agent": f"MyApp/1.0 (mailto:{email})"
 }
 
-# Counters for request statuses
-success_count = 0
-not_found_count = 0
-error_count = 0
-
 # Function to query OpenAlex API
 def get_topics(openalex_url):
-    global success_count, not_found_count, error_count
     response = requests.get(openalex_url, headers=headers)
     time.sleep(0.1)  # Rate limiting
     
     if response.status_code == 200:
-        success_count += 1
         data = response.json()
         if 'topics' in data:
-            # Extract topics, subfields, fields, domains
-            topics = []
-            subfields = []
-            fields = []
-            domains = []
+            # Initialize lists for names and ids
+            topics, topic_ids = [], []
+            subfields, subfield_ids = [], []
+            fields, field_ids = [], []
+            domains, domain_ids = [], []
 
+            # Extract both display_name and id for each concept
             for concept in data['topics']:
                 topics.append(concept['display_name'])
-                subfields.append(concept['subfield']['display_name'] if 'subfield' in concept else '')
-                fields.append(concept['field']['display_name'] if 'field' in concept else '')
-                domains.append(concept['domain']['display_name'] if 'domain' in concept else '')
+                topic_ids.append(concept['id'])
+                
+                # Extract subfields, fields, domains with IDs if present
+                if 'subfield' in concept:
+                    subfields.append(concept['subfield']['display_name'])
+                    subfield_ids.append(concept['subfield']['id'])
+                if 'field' in concept:
+                    fields.append(concept['field']['display_name'])
+                    field_ids.append(concept['field']['id'])
+                if 'domain' in concept:
+                    domains.append(concept['domain']['display_name'])
+                    domain_ids.append(concept['domain']['id'])
 
+            # Join each list of names and IDs with '|'
             return {
                 "topics": '|'.join(topics),
-                "subfields": '|'.join(set(subfields)),  # Use set to remove duplicates
+                "topic_ids": '|'.join(topic_ids),
+                "subfields": '|'.join(set(subfields)),
+                "subfield_ids": '|'.join(set(subfield_ids)),
                 "fields": '|'.join(set(fields)),
-                "domains": '|'.join(set(domains))
+                "field_ids": '|'.join(set(field_ids)),
+                "domains": '|'.join(set(domains)),
+                "domain_ids": '|'.join(set(domain_ids))
             }
     elif response.status_code == 404:
-        not_found_count += 1
+        print(f"Not found: {openalex_url}")
     else:
-        error_count += 1
         print(f"Error: Status code {response.status_code} for URL: {openalex_url}")
 
     return None  # Return None if the request was not successful
@@ -102,18 +113,15 @@ for index, row in df.iterrows():
     # Assign the data to the DataFrame columns
     if topics_data:
         df.at[index, 'topics'] = topics_data["topics"]
+        df.at[index, 'topic_ids'] = topics_data["topic_ids"]
         df.at[index, 'subfields'] = topics_data["subfields"]
+        df.at[index, 'subfield_ids'] = topics_data["subfield_ids"]
         df.at[index, 'fields'] = topics_data["fields"]
+        df.at[index, 'field_ids'] = topics_data["field_ids"]
         df.at[index, 'domains'] = topics_data["domains"]
+        df.at[index, 'domain_ids'] = topics_data["domain_ids"]
 
-    # Write the updated row to the file
-    row_with_topics = row.copy()  # Make a copy of the row
-    row_with_topics['topics'] = topics_data["topics"] if topics_data else None
-    row_with_topics['subfields'] = topics_data["subfields"] if topics_data else None
-    row_with_topics['fields'] = topics_data["fields"] if topics_data else None
-    row_with_topics['domains'] = topics_data["domains"] if topics_data else None
+    # Write the updated row to the file without the header
+    df.loc[[index]].to_csv(output_file, sep='\t', mode='a', header=False, index=False)
 
-    # Append to file without the header
-    row_with_topics.to_frame().T.to_csv(output_file, sep='\t', mode='a', header=False, index=False)
-    
 print("Processing complete. Check the output file for enriched data.")
