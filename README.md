@@ -1,6 +1,6 @@
 # genderTracker
 
-`genderTracker` is a Python program originally developed in the [BioHackathon Germany 2024](https://github.com/bsc-life/biohackathon_germany_2023/tree/wg3/WG3/genderTracker) that predicts the gender of authors listed in a JSON file. This version has been adapted to the current challenge to make predictions solely based on the authors name by making use of the [Genderize](https://genderize.io/) package, the program takes in JSON data containing first and last author names, associates a reference paper ID with each entry (default PMCID), and outputs a CSV file with gender predictions (male/female) along with a probability score for each prediction.
+`genderTracker` is a Python program originally developed in the [BioHackathon Germany 2023](https://github.com/bsc-life/biohackathon_germany_2023/tree/wg3/WG3/genderTracker) that predicts the gender of authors listed in a JSON file. This version has been adapted to the current challenge to make predictions solely based on the authors name by making use of the [Genderize](https://genderize.io/) package, the program takes in JSON data containing first and last author names, associates a reference paper ID with each entry (default PMCID), and outputs a CSV file with gender predictions (male/female) along with a probability score for each prediction.
 
 ## Features
 
