@@ -57,7 +57,7 @@ ollama serve &
 
 Run the creation of several identical models to ensure we can run them concurrently because it is not supported to spam the same model several time (see [https://github.com/ollama/ollama/pull/3418#issuecomment-2138044209](https://github.com/ollama/ollama/pull/3418#issuecomment-2138044209)).
 So a workaround is to create several identical model with a ModelFile but with different names.  
-[> [!NOTE]] Not sure it works at intented need further test
+> [!NOTE] Not sure it works at intented need further test
 
 1. Need to pull the model into the folder
 ```bash
