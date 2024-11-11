@@ -1,4 +1,6 @@
 import os
+import time
+import itertools
 import httpx
 import json
 import csv
@@ -14,7 +16,10 @@ from ollama import AsyncClient
 import ollama
 from prompt import get_gender_prompt
 
-logging.basicConfig(level=logging.WARNING)
+logging.basicConfig(level=logging.INFO)
+# Set the logging level for httpx to WARNING
+logging.getLogger("httpx").setLevel(logging.WARNING)
+logging.getLogger("ollama").setLevel(logging.WARNING)
 
 
 def extract_author_names(chunk, author_type):
@@ -31,6 +36,7 @@ def extract_author_names(chunk, author_type):
         else ""
     )
     # Check if first and last names are valid strings (non-empty and of type string)
+    print(first_name, last_name)
     if isinstance(first_name, str) and isinstance(last_name, str):
         first_name = first_name.strip()
         last_name = last_name.strip()
@@ -43,7 +49,7 @@ def extract_author_names(chunk, author_type):
 def parse_csv(file):
     try:
         # Read the CSV in chunks, specifying separator and error handling
-        df_iter = pd.read_csv(file, on_bad_lines="skip", sep="\t", chunksize=1)
+        df_iter = pd.read_csv(file, chunksize=1)
         for chunk in df_iter:
             try:
                 # Extract first and last author information
@@ -65,11 +71,9 @@ def parse_csv(file):
         return  # Returns None if there's an error opening the file
 
 
-def install_llm_model(model_name):
-    try:
-        subprocess.run(["ollama", "pull", model_name], check=True)
-    except subprocess.CalledProcessError as e:
-        print(f"An error occurred while installing the model: {e}")
+def generate_model_names(model_name, num_models):
+
+    return [f"{model_name}_{i}" for i in range(num_models)]
 
 
 async def infer_gender(
@@ -82,36 +86,50 @@ async def infer_gender(
     api="ollama",
     loaded_models_semaphore=None,
     parallel_requests_semaphore=None,
+    num_parallel=1,
 ):
     prompt_text = get_gender_prompt(author_firstname, author_lastname)
     message = [{"role": "user", "content": prompt_text}]
-    retries = 3
 
-    async with loaded_models_semaphore:
+    # async with loaded_models_semaphore:
 
-        async with parallel_requests_semaphore:
-            try:
-                if api == "openai":
-                    response = await client.chat.completions.create(
-                        model=model_name, messages=message
-                    )
+    async with parallel_requests_semaphore:
+        start_time = time.time()
+        active_tasks = parallel_requests_semaphore._value
+        logging.info(
+            f"[START] Task for {author_firstname} {author_lastname}: "
+            f"{active_tasks}/{num_parallel} active at {start_time}"
+        )
+        try:
+            if api == "openai":
+                response = await client.chat.completions.create(
+                    model=model_name, messages=message
+                )
 
-                    await queue.put(response.choices[0].message.content.strip())
-                elif api == "ollama":
-                    response = await AsyncClient().chat(
-                        model=model_name, messages=message
-                    )
+                response_content = response.choices[0].message.content.strip()
+            elif api == "ollama":
 
-                    await queue.put(response["message"]["content"].strip())
+                # logging.info(f"Using model: {model_name}")
+                response = await AsyncClient().chat(model=model_name, messages=message)
 
-                else:
-                    raise Exception("Miss an api")
-            except httpx.ConnectError as e:
-                print(f"Failed to connect to {api} API: {e}")
-            except Exception as e:
-                print(f"Error during API call: {e}")
+                response_content = response["message"]["content"].strip()
+
+            else:
+                raise Exception("Miss an api")
+            await queue.put(response_content)
+        except httpx.ConnectError as e:
+            print(f"Failed to connect to {api} API: {e}")
+        except Exception as e:
+            print(f"Error during API call: {e}")
         # Update the progress bar as soon as each task completes
-    progress_bar.update(1)
+        finally:
+            # Track end time for logging and update the progress bar
+            end_time = time.time()
+            logging.info(
+                f"[END] Task for {author_firstname} {author_lastname}: "
+                f"Duration: {end_time - start_time} seconds"
+            )
+            progress_bar.update(1)
 
 
 async def save_to_tsv(queue, output_file="gender_data_dict.tsv"):
@@ -178,16 +196,10 @@ def get_already_done_authors(file_path):
     return first_column_set
 
 
-async def main(model, install_llm_model_flag=False, continue_file_flag=False):
-    if install_llm_model_flag:
-        install_llm_model(model)
-
-    client = OpenAI(
-        base_url="http://localhost:11434/v1", api_key="ollama"  # required, but unused
-    )
+async def main(model, data, continue_file_flag=False):
 
     model_name = model
-    csv_data_filename = "data/enriched_aggregated_papers.csv"
+    csv_data_filename = data
     source_filename = os.path.splitext(os.path.basename(csv_data_filename))[0]
     csv_results_filename = f"data/{source_filename}_gender_authors_{model_name}.tsv"
 
@@ -210,6 +222,9 @@ async def main(model, install_llm_model_flag=False, continue_file_flag=False):
     max_loaded_models = int(os.getenv("OLLAMA_MAX_LOADED_MODELS", 3))
     num_parallel = int(os.getenv("OLLAMA_NUM_PARALLEL", 4))
     max_queue = int(os.getenv("OLLAMA_MAX_QUEUE", 512))
+    logging.info(f"Max loaded models: {max_loaded_models}")
+    logging.info(f"Num parallel: {num_parallel}")
+    logging.info(f"Max queue: {max_queue}")
 
     # Define semaphores based on concurrency limits
     # 1. Semaphore for limiting total number of loaded models concurrently
@@ -221,6 +236,15 @@ async def main(model, install_llm_model_flag=False, continue_file_flag=False):
     # Start the saving to tsv in background
     asyncio.create_task(save_to_tsv(queue, output_file=csv_results_filename))
 
+    # Load multiple models
+    # await load_multiple_models(model_name, max_loaded_models)
+    # models_list = generate_model_names(model_name, max_loaded_models)
+    # model_iterator = itertools.cycle(models_list)
+
+    client = OpenAI(
+        base_url="http://localhost:11434/v1", api_key="ollama"  # required, but unused
+    )
+
     with tqdm(total=size_data) as progress_bar:
         for firstname, lastname in parse_csv(csv_data_filename):
             if firstname and lastname:
@@ -228,8 +252,9 @@ async def main(model, install_llm_model_flag=False, continue_file_flag=False):
                 if author in set_authors:
                     continue
                 set_authors.add(author)
-
-                tasks.append(
+                # model_name = next(model_iterator)
+                # logging.info(f"Using model: {model_name} for {firstname} {lastname}")
+                task = asyncio.create_task(
                     infer_gender(
                         client=client,
                         queue=queue,
@@ -239,9 +264,10 @@ async def main(model, install_llm_model_flag=False, continue_file_flag=False):
                         progress_bar=progress_bar,
                         loaded_models_semaphore=loaded_models_semaphore,
                         parallel_requests_semaphore=parallel_requests_semaphore,
+                        num_parallel=num_parallel,
                     )
                 )
-
+                tasks.append(task)
         # Await all tasks concurrently (inference tasks)
         await asyncio.gather(*tasks)
         # Signal the consumer to stop after all tasks are done
@@ -251,9 +277,7 @@ async def main(model, install_llm_model_flag=False, continue_file_flag=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-m", "--model", help="Name of the LLM model")
-    parser.add_argument(
-        "--install-model", action="store_true", help="Install the model"
-    )
+    parser.add_argument("-d", "--data", help="Path to the datafile")
     parser.add_argument(
         "-c",
         "--continue_file",
@@ -264,6 +288,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     try:
-        asyncio.run(main(args.model, args.install_model, args.continue_file))
+        asyncio.run(main(args.model, args.data, args.continue_file))
     except (KeyboardInterrupt, EOFError):
         raise
