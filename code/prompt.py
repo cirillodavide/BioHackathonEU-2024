@@ -6,7 +6,8 @@ def get_gender_prompt(author_firstname, author_lastname):
     - Include a reasoning for each author based on the name provided.
     - For composed names (e.g., "Jose María", "Emma Charles"), consider the combined meaning, as such names may indicate gender differently than their individual parts would suggest.
 
-    The name of the author is: {author_firstname} {author_lastname}.
+    The first name of the author is: {author_firstname}.
+    The last name of the author is: {author_lastname}.
    
     Please return the response in **strict JSON format only**, with no additional text.
     Use the following structure:
