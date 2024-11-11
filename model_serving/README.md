@@ -1,4 +1,4 @@
-# Serving llm model on Marenostrum using vllm
+# Serving llm model on Marenostrum using ollama
 
 ## Preparing on the Marenostrum
 
