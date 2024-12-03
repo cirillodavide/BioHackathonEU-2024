@@ -22,7 +22,7 @@ module purge
 module load mkl intel impi hdf5 python cuda/12.1 ollama # Cuda 12.1 is the last version supported by vllm 
 python3.12 -m venv venv_mn5
 source venv/bin/activate
-pip install -U openai pandas
+pip install -U openai pandas ollama
 ```
 Alternatively to installing packages manually
 ```bash
